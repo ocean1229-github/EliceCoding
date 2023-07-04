@@ -4,3 +4,6 @@ $ cowsay hi
 
 npx
 $ npx cowsay hi
+
+Node version
+$ npx node@12 index.js 

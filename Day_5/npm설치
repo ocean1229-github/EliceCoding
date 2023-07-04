@@ -1,0 +1,24 @@
+// 실행 버튼을 클릭한 후 터미널 탭으로 이동합니다.
+
+// 실행 중인 npm init을 다음 지시사항에 따라 설정합니다.
+
+// 프로젝트 설정은 다음과 같이 지정합니다.
+
+// package name을 myapp으로 설정합니다.
+// version을 0.0.1로 설정합니다.
+// description을 my first app으로 설정합니다.
+// 이후 다른 설정값은 기본 값을 사용합니다. Enter 키를 입력하면 기본 값이 자동으로 입력됩니다.
+// Tips!
+// 프로젝트 설정 시 값을 입력하지 않고 엔터를 누르면 기본 값으로 설정됩니다.
+// 해당 문제는 제출이 없습니다. 실행 버튼을 눌러 프로젝트가 잘 설정되는지 확인해보세요.
+
+package name: myapp
+version: 0.0.1
+description: my first app
+entry point: (index.js)
+test command:
+git repository:
+keywords:
+author:
+license: (ISC)
+

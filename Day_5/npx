@@ -1,0 +1,6 @@
+npm
+$ npm i cowsay -g
+$ cowsay hi
+
+npx
+$ npx cowsay hi

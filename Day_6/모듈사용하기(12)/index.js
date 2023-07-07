@@ -11,3 +11,5 @@ console.log(
     funcModule()
 );
 
+// function Module로 위에서 링크 처리로 가져오는 방식.
+// 이 코드 그대로가 모듈 참조하는 방식임.

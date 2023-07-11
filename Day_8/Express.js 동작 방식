@@ -39,7 +39,7 @@ Express.js 에선 global 변수를 선언하지 않고 이 값을 사용할 수 
 크게 app 라우팅과 Express.Router를 통한 라우팅으로 나누어짐
 
 app라우팅
-app객체에 직접 get, post, put, delete 함수를 사요하여 HTTP method 로 라우팅 할 수 있음.
+app객체에 직접 get, post, put, delete 함수를 사용하여 HTTP method 로 라우팅 할 수 있음.
 
 HTTP method 함수의 첫 번째 인자가 이 라우팅을 실행할 URL
 
@@ -49,3 +49,39 @@ all 함수를 사용하면 HTTP method에 상관없이 라우팅 가능
 
 app라우팅을 통해서는 라우팅의 핵심이 그룹화를 지원하지 않음
 Express.Router 를 통해 라우팅을 모듈화 할 수 있음
+
+const express = require('express');
+const router = express.Router();
+
+router.get('/', (req, res, next) => {
+    res.send('respond with a resource');
+});
+
+module.exports = router;
+
+router 객체에도 app 객체처럼 get, put, post, delete 함수를 사용할 수 있음
+APP의 함수와 동일한 동작을 하는 함수로 첫 번째 인자가 라우팅 될 URL이고,
+마지막 인자가 라우팅 시 실행될 함수
+라우터는 일반적으로 모듈로 만들어서 사용함
+
+path parameter 사용하기 - 주소의 일부를 변수처럼 사용할 수 있음
+ex) users/:id - /users/123, 456 등
+
+라우팅에 적용되는 함수를 Request Handler라고 부름
+HTTP 요청과 응답을 다룰 수 있는 함수로
+설정된 라우팅 경로에 해당하는 요청이 들어오면 Request Handler 함수가 실행됨
+
+req, res 모두 객체.
+
+req - http요청 정보를 가진 객체
+클라이언트 -> 서버 (필요한 정보)
+path parameter, query parameter, body, header 등
+
+res - http응답을 처리하는 객체
+res.send() - text 형식의 http 응답, res.json() - json, res.rendere() - http templete, res.set() - 헤더, res.status() - http 상태값
+
+Express.js 동작방식 정리
+Express.js는 app객체를 시작으로 모든 동작이 이루어짐
+app 객체나 Express.Router를 사용하여 라우팅을 구현할 수 있음
+Request Handler 를 통해 HTTP 요청과 응답을 처리할 수 있음
+
